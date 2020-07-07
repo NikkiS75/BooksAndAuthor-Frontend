@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="text-center">Редактирование</h1>
+  <form [formGroup]="bookEditForm">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="form-group">
+        <label for="bookName">Название книги</label>
+        <input type="text" class="form-control" id="bookName" formControlName="bookName">
+      </div>
+        <div class="form-group">
+          <label for="annotation">Аннотация</label>
+          <textarea type="text" class="form-control" id="annotation" cols="30" rows="5" formControlName="bookAnnotation"></textarea>
+        </div>
+      <div class="form-group">
+        <label for="yearPublic">Год издания</label>
+        <input type="text" class="form-control" id="yearPublic" formControlName="bookYearPublic">
+      </div>
+      <div class="form-group">
+        <label for="numberPages">Количество страниц</label>
+        <input type="text" class="form-control" id="numberPages" formControlName="bookNumberPages">
+      </div>
+      <button type="submit" class="btn btn-primary">Изменить</button>
+      </div>
+    </div>
+  </form>
+</div>
+

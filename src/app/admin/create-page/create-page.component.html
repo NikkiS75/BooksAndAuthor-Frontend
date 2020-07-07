@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 class="text-center">Создание книги</h1>
+  <form [formGroup]="bookForm">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="form-group">
+        <label for="bookName">Название книги</label>
+        <input type="text" class="form-control" id="bookName" formControlName="bookName">
+      </div>
+      <div class="form-group">
+        <label for="authorSurname">Фамилия автора</label>
+        <input type="text" class="form-control" id="authorSurname">
+      </div>
+      <div class="form-group">
+        <label for="authorName">Имя автора</label>
+        <input type="text" class="form-control" id="authorName">
+      </div>
+      <div class="form-group">
+        <label for="annotation">Аннотация</label>
+        <textarea type="text" class="form-control" id="annotation" cols="30" rows="5" formControlName="bookAnnotation"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="yearPublic">Год издания</label>
+        <input type="text" class="form-control" id="yearPublic" formControlName="bookYearPublic">
+      </div>
+      <div class="form-group">
+        <label for="numberPages">Количество страниц</label>
+        <input type="number" class="form-control" id="numberPages" formControlName="bookNumberPages">
+      </div>
+      <button type="submit" class="btn btn-primary">Создать</button>
+    </div>
+  </div>
+  </form>
+</div>
