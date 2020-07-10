@@ -2,20 +2,20 @@
   <thead>
   <tr>
     <th>№</th>
-    <th>Фамилия</th>
     <th>Имя</th>
+    <th>Фамилия</th>
     <th>Количесто книг</th>
     <th>Действия</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1</td>
-    <td>Оруэлл</td>
-    <td>Джородж</td>
-    <td>1</td>
-    <td><button class="btn btn-dark" [routerLink]="['/admin','author',253526,'edit']">Открыть</button>
-      <button class="btn btn-danger">Удалить</button>
+  <tr *ngFor="let author of authors">
+    <td>{{author.authorID}}</td>
+    <td>{{author.authorName}}</td>
+    <td>{{author.authorSurname}}</td>
+    <td>{{author.quantBooks}}</td>
+    <td><button class="btn btn-dark" [routerLink]="['/admin','author',author.authorID,'edit']">Открыть</button>
+      <button class="btn btn-danger" (click)="deleteAuthor(author.authorID)">Удалить</button>
     </td>
   </tr>
   </tbody>

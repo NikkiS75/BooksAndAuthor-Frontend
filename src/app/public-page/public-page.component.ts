@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {BookService} from "../admin/shared/services/book.service";
+import {Observable} from "rxjs";
+import {Book} from "../shared/interfaces/book";
 
 @Component({
   selector: 'app-public-page',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicPageComponent implements OnInit {
 
-  constructor() { }
+  books$: Observable<Book[]>;
+
+  constructor(private bookService:BookService) { }
 
   ngOnInit(): void {
+    this.getAllBooks();
+  }
+
+  getAllBooks(){
+    this.books$ = this.bookService.getAll()
+
   }
 
 }

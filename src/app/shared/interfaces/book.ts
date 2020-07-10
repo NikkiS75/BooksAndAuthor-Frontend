@@ -1,6 +1,10 @@
 export interface Book {
-  id?: number;
+  bookID?: number;
+  bookName: string;
+  bookAnnotation:string;
   yearPublic: string;
   numberPages: string
-  authorID: number;
+  authorName?: string;
+  authorSurname?: string;
+  authorID?: number;
 }

@@ -11,6 +11,10 @@ import { ListAuthorPageComponent } from './list-author-page/list-author-page.com
 import {BooksComponent} from "./shared/components/books/books.component";
 import {AuthorsListComponent} from "./shared/components/authors-list/authors-list.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {AuthGuard} from "./shared/services/auth.guard";
+
+
 
 
 
@@ -24,7 +28,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     BooksEditPageComponent,
     AuthorEditPageComponent,
     BooksComponent,
-    AuthorsListComponent
+    AuthorsListComponent,
   ],
   imports: [
     CommonModule,
@@ -33,18 +37,20 @@ import {ReactiveFormsModule} from "@angular/forms";
         path: '', component: AdminLayoutComponent, children: [
           {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
           {path: 'login', component: LoginPageComponent},
-          {path: 'books', component: ListBooksPageComponent},
-          {path: 'author-list', component: ListAuthorPageComponent},
-          {path: 'create', component: CreatePageComponent},
-          {path: 'book/:id/edit', component: BooksEditPageComponent},
-          {path: 'author/:id/edit', component: AuthorEditPageComponent},
+          {path: 'books', component: ListBooksPageComponent, canActivate: [AuthGuard]},
+          {path: 'author-list', component: ListAuthorPageComponent, canActivate: [AuthGuard]},
+          {path: 'create', component: CreatePageComponent, canActivate: [AuthGuard]},
+          {path: 'book/:id/edit', component: BooksEditPageComponent, canActivate: [AuthGuard]},
+          {path: 'author/:id/edit', component: AuthorEditPageComponent, canActivate: [AuthGuard]},
 
         ]
       }
     ]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports:[],
+  providers:[AuthGuard]
 
 })
 

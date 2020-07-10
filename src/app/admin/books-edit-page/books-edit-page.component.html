@@ -1,8 +1,9 @@
 <div class="container">
   <h1 class="text-center">Редактирование</h1>
-  <form [formGroup]="bookEditForm">
+  <form [formGroup]="bookEditForm" *ngIf="bookEditForm" (submit)="updateBook(bookEditForm)">
     <div class="modal-dialog">
       <div class="modal-content">
+        <div class="alert-success" *ngIf="message">{{message}}</div>
       <div class="form-group">
         <label for="bookName">Название книги</label>
         <input type="text" class="form-control" id="bookName" formControlName="bookName">
@@ -19,7 +20,7 @@
         <label for="numberPages">Количество страниц</label>
         <input type="text" class="form-control" id="numberPages" formControlName="bookNumberPages">
       </div>
-      <button type="submit" class="btn btn-primary">Изменить</button>
+      <button type="submit" class="btn btn-primary" [disabled]="bookEditForm.invalid">Изменить</button>
       </div>
     </div>
   </form>

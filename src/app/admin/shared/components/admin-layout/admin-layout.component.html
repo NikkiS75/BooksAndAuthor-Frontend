@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white mynav">
  <h1 routerLink="/" class="text-dark">Admin</h1>
-  <ul class="navbar-nav ">
+  <ul *ngIf="auth.isAuthenticated()" class="navbar-nav ">
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/admin','books']">Книги</a>
     </li>

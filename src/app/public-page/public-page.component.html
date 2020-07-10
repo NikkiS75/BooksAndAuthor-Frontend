@@ -1,1 +1,4 @@
-<app-books-table></app-books-table>
+<div *ngIf="books$| async as books">
+  <app-books-table [books] = "books"></app-books-table>
+</div>
+

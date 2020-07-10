@@ -1,5 +1,6 @@
-interface Author {
-  id?:number;
-  surname:string;
-  name: string;
+ export interface Author {
+  authorID?:number;
+  authorSurname:string;
+  authorName: string;
+  quantBooks?: number;
 }

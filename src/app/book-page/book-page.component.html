@@ -1,13 +1,13 @@
-<div class="container">
-  <h1 class="text-dark text-center">1984</h1>
-  <small>Джордж Оруэлл</small>
+<div class="container" *ngIf="book$ |async as book">
+  <h1 class="text-dark text-center">{{book.bookName}}</h1>
+  <h6 class="text-dark text-center">{{book.authorName}} {{book.authorSurname}}</h6>
   <p>
-    Аннотация:
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad adipisci alias asperiores aut autem consectetur debitis dicta dignissimos dolore ducimus eligendi error, et illum incidunt laboriosam, laborum nam neque nesciunt odio perferendis quae quam quisquam quo, sit suscipit vel! Accusamus aspernatur, facilis fuga necessitatibus officiis placeat quis sit voluptatibus!
+    {{book.bookAnnotation}}
   </p>
   <p>
-    Количество книг:
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad adipisci alias asperiores aut autem consectetur debitis dicta dignissimos dolore ducimus eligendi error, et illum incidunt laboriosam, laborum nam neque nesciunt odio perferendis quae quam quisquam quo, sit suscipit vel! Accusamus aspernatur, facilis fuga necessitatibus officiis placeat quis sit voluptatibus!
+    Год издания: {{book.yearPublic}}
+    <br>
+    Количество страниц: {{book.numberPages}}
   </p>
   <button routerLink="/" class="btn btn-dark">На главную</button>
 </div>

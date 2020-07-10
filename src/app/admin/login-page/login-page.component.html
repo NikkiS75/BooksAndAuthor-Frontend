@@ -1,8 +1,11 @@
 <div class="container">
   <h1 class="text-center">Вход</h1>
-  <form [formGroup]="authForm" >
+  <form [formGroup]="authForm" (submit)="submit(authForm)">
     <div class="modal-dialog">
       <div class="modal-content">
+        <div class="alert-danger" *ngIf="message">
+          {{message}}
+        </div>
         <div class="form-group">
           <label for="login">Логин</label>
           <input type="text" class="form-control" id="login" formControlName="login">
@@ -11,7 +14,7 @@
           <label for="password">Имя</label>
           <input type="password" class="form-control" id="password" formControlName="password">
         </div>
-        <button type="submit" class="btn btn-primary">Войти</button>
+        <button type="submit" class="btn btn-primary" [disabled]="authForm.invalid" >Войти</button>
       </div>
     </div>
   </form>

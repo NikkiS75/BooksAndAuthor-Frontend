@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/scss/bootstrap';
+body, html{
+  padding: 0;
+  margin:0;
+}
+
 .modal-content{
   border: none;
+}
+
+
+.container{
+  margin-top: 20px;
 }

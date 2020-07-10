@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table" >
   <thead>
   <tr>
     <th>№</th>
@@ -10,13 +10,13 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1</td>
-    <td>1984</td>
-    <td>Джордж Оруэлл</td>
-    <td>1949</td>
-    <td>328</td>
-    <td><button class="btn btn-dark" [routerLink]="['/book',253526]">Открыть</button></td>
+  <tr *ngFor="let book of books">
+    <td>{{book.bookID}}</td>
+    <td>{{book.bookName}}</td>
+    <td>{{book.authorName}} {{book.authorSurname}}</td>
+    <td>{{book.yearPublic}}</td>
+    <td>{{book.numberPages}}</td>
+    <td><button class="btn btn-dark" [routerLink]="['/book', book.bookID]">Открыть</button></td>
   </tr>
   </tbody>
 </table>
